@@ -1,0 +1,17 @@
+﻿@page "/FillTheForm"
+
+<h3>Fill The Address </h3>
+
+<EditForm Model="@Address" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <InputText id="Street" @bind-Value="Address.Street" />
+    <InputText id="City" @bind-Value="Address.City" />
+    <InputText id="PostCode" @bind-Value="Address.PostCode" />
+    <InputText id="State" @bind-Value="Address.State" />
+    <button type="submit">Submit</button>
+    <ValidationSummary />
+</EditForm>
+
+<div>
+    @AfterSubmitMessage
+</div>
